@@ -4,9 +4,9 @@ const routes = require("./routes");
 const cors = require("cors");
 const app = express();
 
-// mongodb+srv://bruno159:bruno159@cluster0-kdvlv.mongodb.net/test?retryWrites=true&w=majority
+
 mongoose.connect(
-  "mongodb+srv://bruno159:bruno159@cluster0-kdvlv.mongodb.net/week10?retryWrites=true&w=majority",
+  "LINKMONGODB",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
