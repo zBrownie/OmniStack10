@@ -29,7 +29,7 @@ export default function PainelUser() {
     async function handleSubmit(e) {
         e.preventDefault()
 
-        const resp = await api.post('/devs', {
+        await api.post('/devs', {
             github_username: username,
             techs,
             latitude,
@@ -39,6 +39,7 @@ export default function PainelUser() {
         setTechs('')
         setUsername('')
     }
+
     return ( 
         <aside>
             <strong>Cadastrar</strong>

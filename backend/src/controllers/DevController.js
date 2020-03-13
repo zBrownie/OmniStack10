@@ -4,6 +4,7 @@ const parseArray = require("../utils/parseStringAsArray");
 
 module.exports = {
   async index(request, response) {
+    //RETORNA TODOS DEV CADASTRADOS
     const devs = await Dev.find();
 
     return response.json(devs);
@@ -13,8 +14,10 @@ module.exports = {
     try {
       const { github_username, techs, latitude, longitude } = request.body;
 
+      //PROCURA SE DEV JA EXISTE
       let dev = await Dev.findOne({ github_username });
 
+      //SE DEV NAO EXISTE NO BANCO DE DADOS, ELE CADASTRA PEGANDO DADOS DA API GITHUB
       if (!dev) {
         const resp = await axios.get(
           `https://api.github.com/users/${github_username}`

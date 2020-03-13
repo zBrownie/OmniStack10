@@ -6,7 +6,7 @@ const app = express();
 
 
 mongoose.connect(
-  "LINKMONGODB",
+  "mongodb+srv://bruno159:643512@cluster0-kdvlv.mongodb.net/week10?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -15,6 +15,8 @@ mongoose.connect(
   }
 );
 
+//CORS BLOQUEIA ACESSO A API, 
+//DEIXANDO SEM ARGUMENTOS QUALQUER UM PODE ACESSAR
 app.use(cors());
 
 app.use(express.json());
